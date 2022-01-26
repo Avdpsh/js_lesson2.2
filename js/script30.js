@@ -1,28 +1,30 @@
-let mushroomСolor = prompt('Введите цвет гриба (белый, желтый, красный, коричневый):', '')
+let mushroomСolor = prompt('Введите цвет гриба (белый, желтый, красный, коричневый):', '');
+mushroomСolor = mushroomСolor.toUpperCase().trim();
 let skirt = prompt('Введите наличие юбки на грибе (есть/нет):', '');
+skirt = skirt.toUpperCase().trim();
 
-    switch (mushroomСolor.toUpperCase().trim()) {
-      case 'БЕЛЫЙ':
-        if (skirt.trim().toUpperCase() == 'НЕТ')
-          alert('Вы нашли белый гриб');
-        else {
-          alert('Введены неверные данные: Проверьте наличие юбки');
-        }
+switch (mushroomСolor) {
+    case 'БЕЛЫЙ':
+        if ((skirt) == 'НЕТ')
+            alert ('Вы нашли белый гриб');
+        else if ((skirt) == 'ЕСТЬ')
+                 alert ('Может это поганка какая?');
+             else
+                 alert('Неверный ввод наличия юбки');
         break;
-      case 'КРАСНЫЙ':
-        if (skirt.trim().toUpperCase() == 'ЕСТЬ')
-          alert('А не мухомор ли это');
-        else if (skirt.trim().toUpperCase() == 'НЕТ')
-          alert('может это подосиновик');
-        else {
-          alert('Введены неверные данные: Проверьте наличие юбки');
-        }
+    case 'КРАСНЫЙ':
+        if ((skirt) == 'НЕТ')
+            alert ('Может это подосиновик?');
+        else if ((skirt) == 'ЕСТЬ')
+                 alert ('А не мухомор ли это?');
+             else
+                 alert('Неверный ввод наличия юбки');
         break;
-      case 'ЖЕЛТЫЙ':
-      case 'КОРИЧНЕВЫЙ':
+    case 'ЖЕЛТЫЙ':
+    case 'КОРИЧНЕВЫЙ':
         alert('С грибами надо быть внимательными');
         break;
-      default:
-        alert('Введите корректные данные');
+    default:
+        alert('Неверный ввод данных');
         break;
-    }
+}
